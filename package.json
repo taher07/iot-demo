@@ -1,0 +1,25 @@
+{
+  "name": "mqtt-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "upload-service": "npx nodemon upload-service/index.js",
+    "aggregator-service": "npx nodemon aggregator-service/index.js",
+    "analysis-service": "npx nodemon analysis-service/index.js",
+    "motor-service": "npx nodemon motor-service/index.js",
+    "start": "npx concurrently 'npm run upload-service' 'npm run aggregator-service' 'npm run analysis-service' 'npm run motor-service'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1203.0",
+    "dotenv": "^16.0.1",
+    "mqtt": "^4.3.7"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
