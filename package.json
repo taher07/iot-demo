@@ -8,7 +8,7 @@
     "aggregator-service": "npx nodemon aggregator-service/index.js",
     "analysis-service": "npx nodemon analysis-service/index.js",
     "motor-service": "npx nodemon motor-service/index.js",
-    "start": "npx concurrently 'npm run upload-service' 'npm run aggregator-service' 'npm run analysis-service' 'npm run motor-service'"
+    "start": "npx concurrently 'npm:upload-service' 'npm:aggregator-service' 'npm:analysis-service' 'npm:motor-service'"
   },
   "keywords": [],
   "author": "",

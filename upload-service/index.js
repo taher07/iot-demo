@@ -3,7 +3,7 @@ const AWS = require("aws-sdk")
 const { MQTT, AWS_SERVICES } = require("../constants")
 
 const s3 = new AWS.S3({
-  credentials: new AWS.Credentials("AKIA3M7SPNEBMSVF4D5O", "DaDqJwQ139HQMCsDu6zWC0gCiw+iG/+a9KBdturh"),
+  credentials: new AWS.Credentials(AWS_SERVICES.ACCESS_KEY, AWS_SERVICES.SECRET),
   apiVersion: '2006-03-01'
 })
 

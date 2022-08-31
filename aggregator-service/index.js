@@ -17,7 +17,13 @@ client.on('message', function (topic, message) {
   const processedMessage = JSON.parse(message.toString())
   data.push(processedMessage)
 
-  if (sendToAnalyzer(data)) client.publish(MQTT.TOPICS.ANALYSIS, processedMessage)
+  if (sendToAnalyzer(data)) client.publish(MQTT.TOPICS.ANALYSIS, JSON.stringify(processedMessage))
 })
+
+setInterval(() => {
+  if (data.length > 0) {
+    client.publish(MQTT.TOPICS.UPLOAD, JSON.stringify(data))
+  }
+}, 2 * 60000)
 
 console.log("Aggregator Service Started");
